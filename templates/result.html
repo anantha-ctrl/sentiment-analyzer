@@ -4,68 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            margin-top: 10px;
-            display: inline-block;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .sentiment {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
         .positive {
             color: green;
+            font-weight: bold;
         }
         .negative {
             color: red;
+            font-weight: bold;
         }
         .neutral {
-            color: gray;
+            color: orange;
+            font-weight: bold;
         }
         footer {
-            margin-top: auto;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #f8f9fa;
             text-align: center;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sentiment Analysis Result</h1>
-        <p><strong>Input Text:</strong> {{ text }}</p>
-        <p class="sentiment {% if sentiment == 'Positive' %}positive{% elif sentiment == 'Negative' %}negative{% else %}neutral{% endif %}">
-            <strong>Sentiment:</strong> {{ sentiment }}
-        </p>
-        <a href="/">Analyze another text</a>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h1 class="card-title">Sentiment Analysis Result</h1>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>Input Text:</strong> {{ text }}</p>
+                <p class="card-text sentiment {% if sentiment == 'Positive' %}positive{% elif sentiment == 'Negative' %}negative{% else %}neutral{% endif %}">
+                    <strong>Sentiment:</strong> {{ sentiment }}
+                </p>
+                <a href="/" class="btn btn-primary">Analyze another text</a>
+            </div>
+        </div>
     </div>
-    <footer>
-        <p>&copy; 2025 Sentiment Analyzer. All Rights Reserved. <br>Designed By Anantha Kumar G</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sentiment Analyzer. All Rights Reserved.</p>
+        </div>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
